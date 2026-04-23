@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { photos, getTodayPhotoIndex, getRevealedPhotoIndices, isBirthdayToday, NAME, TOTAL_PHOTOS, BIRTHDAY } from '@/lib/data'
+import { photos, getCurrentDate, getTodayPhotoIndex, getRevealedPhotoIndices, isBirthdayToday, NAME, TOTAL_PHOTOS, BIRTHDAY } from '@/lib/data'
 
 type View = 'oggi' | 'album'
 
@@ -131,12 +131,12 @@ export default function Home() {
   const [view, setView] = useState<View>('oggi')
   const [countdown, setCountdown] = useState<Countdown>(getCountdown())
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
-  const [isBirthday] = useState(isBirthdayToday())
 
+  const isBirthday = isBirthdayToday()
   const todayPhotoIndex = getTodayPhotoIndex()
   const revealedIndices = getRevealedPhotoIndices()
   const todayPhoto = photos[todayPhotoIndex]
-  const today = new Date()
+  const today = getCurrentDate()
 
   useEffect(() => {
     if (isBirthday) return
