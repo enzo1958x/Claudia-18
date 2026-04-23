@@ -10,7 +10,7 @@
 export const BIRTHDAY = { day: 26, month: 5 } // 26 maggio
 export const NAME = "Claudia"
 export const TOTAL_PHOTOS = 41
-export const SIMULATED_DATE = "" // Lascia vuoto dopo il test: ""
+export const SIMULATED_DATE = "" // Esempio test compleanno: "2026-05-26"
 
 export interface PhotoEntry {
   id: number
@@ -268,7 +268,7 @@ export const photos: PhotoEntry[] = [
   }
 ]
 
-function getCurrentDate(): Date {
+export function getCurrentDate(): Date {
   if (!SIMULATED_DATE) return new Date()
 
   const [year, month, day] = SIMULATED_DATE.split("-").map(Number)
