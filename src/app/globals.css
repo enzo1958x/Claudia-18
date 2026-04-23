@@ -167,7 +167,8 @@ nav {
 .photo-day-image-wrap video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--warm);
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -309,7 +310,8 @@ nav {
 .album-item video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--warm);
 }
 
 .album-item-overlay {
@@ -375,7 +377,8 @@ nav {
 .lightbox-img {
   width: 100%;
   aspect-ratio: 4/3;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--warm);
 }
 
 .lightbox-body {
