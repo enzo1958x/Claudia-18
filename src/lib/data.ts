@@ -10,6 +10,7 @@
 export const BIRTHDAY = { day: 26, month: 5 } // 26 maggio
 export const NAME = "Claudia"
 export const TOTAL_PHOTOS = 41
+export const SIMULATED_DATE = "2026-05-26" // Lascia vuoto dopo il test: ""
 
 export interface PhotoEntry {
   id: number
@@ -267,9 +268,16 @@ export const photos: PhotoEntry[] = [
   }
 ]
 
+function getCurrentDate(): Date {
+  if (!SIMULATED_DATE) return new Date()
+
+  const [year, month, day] = SIMULATED_DATE.split("-").map(Number)
+  return new Date(year, month - 1, day)
+}
+
 // Calcola quale foto mostrare oggi
 export function getTodayPhotoIndex(): number {
-  const today = new Date()
+  const today = getCurrentDate()
   const todayDay = today.getDate()
   const todayMonth = today.getMonth() + 1 // 1-based
 
@@ -304,7 +312,7 @@ export function getTodayPhotoIndex(): number {
 
 // Ritorna tutti gli indici delle foto già mostrate (fino a oggi)
 export function getRevealedPhotoIndices(): number[] {
-  const today = new Date()
+  const today = getCurrentDate()
   const todayDay = today.getDate()
   const todayMonth = today.getMonth() + 1
 
@@ -333,6 +341,6 @@ export function getRevealedPhotoIndices(): number[] {
 }
 
 export function isBirthdayToday(): boolean {
-  const today = new Date()
+  const today = getCurrentDate()
   return today.getDate() === BIRTHDAY.day && today.getMonth() + 1 === BIRTHDAY.month
 }
