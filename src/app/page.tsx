@@ -66,6 +66,7 @@ function Confetti() {
 // ─── Photo placeholder ──────────────────────────────────────
 function PhotoDisplay({ filename, alt, className }: { filename: string; alt: string; className?: string }) {
   const [error, setError] = useState(false)
+  const isVideo = filename.toLowerCase().endsWith('.mp4')
 
   if (error) {
     return (
@@ -73,6 +74,21 @@ function PhotoDisplay({ filename, alt, className }: { filename: string; alt: str
         <span>📷</span>
         <span>{filename}</span>
       </div>
+    )
+  }
+
+  if (isVideo) {
+    return (
+      <video
+        src={`/photos/${filename}`}
+        className={className}
+        controls
+        playsInline
+        preload="metadata"
+        onError={() => setError(true)}
+      >
+        {alt}
+      </video>
     )
   }
 
