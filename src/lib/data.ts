@@ -255,13 +255,13 @@ export const photos: PhotoEntry[] = [
   },
   {
     id: 40,
-    filename: "photo_40.jpg",
+    filename: "photo_40.mp4",
     emoji: "💫",
     dedica: "Domani compi 18 anni. Stanotte, mentre dormi, si chiude un capitolo bellissimo. E domani ne inizia uno ancora più bello. Ti voglio un mondo di bene."
   },
   {
     id: 41,
-    filename: "photo_41.jpg",
+    filename: "photo_41.mp4",
     emoji: "🎂",
     dedica: "Questa è l'ultima foto prima del grande giorno. Ma il grande giorno è già qui. Buon compleanno, Claudia — oggi e sempre."
   }
