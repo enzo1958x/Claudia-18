@@ -256,23 +256,28 @@ nav {
 }
 
 .nav-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 14px 24px 16px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 14px 32px 16px;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 14px;
+  position: relative;
 }
 
 .nav-heading {
   font-family: var(--font-display);
-  font-size: clamp(22px, 2.5vw, 28px);
+  font-size: clamp(26px, 3vw, 36px);
   color: var(--ink);
   line-height: 1.08;
-  flex: 1;
   white-space: nowrap;
-  min-width: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: calc(100% - 280px);
 }
 
 .nav-heading-name {
@@ -289,6 +294,7 @@ nav {
   justify-content: flex-end;
   flex: 0 0 auto;
   align-self: flex-end;
+  margin-left: auto;
 }
 
 .nav-tab {
@@ -744,14 +750,20 @@ nav {
   .nav-inner {
     align-items: flex-start;
     flex-direction: column;
+    padding: 12px 18px 14px;
     gap: 12px;
   }
   .nav-heading {
     font-size: clamp(26px, 7vw, 36px);
     white-space: normal;
+    position: static;
+    transform: none;
+    max-width: none;
+    text-align: left;
   }
   .nav-tabs-bottom {
     align-self: flex-start;
+    margin-left: 0;
   }
   .ambient-blob-left {
     width: 170px;
