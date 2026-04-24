@@ -258,38 +258,28 @@ nav {
 .nav-inner {
   max-width: 860px;
   margin: 0 auto;
-  padding: 16px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.nav-copy {
+  padding: 12px 24px 14px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  min-width: 0;
+  align-items: center;
+  gap: 10px;
 }
 
-.nav-title {
+.nav-heading {
   font-family: var(--font-display);
-  font-size: 18px;
-  color: var(--ink-soft);
-  font-style: italic;
-}
-
-.nav-subtitle {
-  font-size: 12px;
-  color: var(--muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: clamp(22px, 3.2vw, 30px);
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.15;
 }
 
 .nav-tabs {
   display: flex;
   gap: 4px;
+}
+
+.nav-tabs-bottom {
+  justify-content: center;
 }
 
 .nav-tab {
@@ -317,7 +307,7 @@ nav {
 /* ─── Hero section ─── */
 .hero {
   text-align: center;
-  padding: 60px 0 36px;
+  padding: 24px 0 28px;
 }
 
 .hero-label {
@@ -773,15 +763,11 @@ nav {
 /* ─── Responsive ─── */
 @media (max-width: 600px) {
   .nav-inner {
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
   }
-  .nav-copy {
-    flex: 1;
-  }
-  .nav-subtitle {
-    white-space: normal;
-    line-height: 1.35;
+  .nav-heading {
+    font-size: 20px;
   }
   .ambient-blob-left {
     width: 170px;
@@ -844,7 +830,7 @@ nav {
     top: 460px;
   }
   .hero {
-    padding: 42px 0 28px;
+    padding: 18px 0 22px;
   }
   .hero-title {
     font-size: clamp(22px, 6vw, 30px);
