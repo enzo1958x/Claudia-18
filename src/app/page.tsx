@@ -166,6 +166,13 @@ export default function Home() {
       </nav>
 
       <main>
+        {!isBirthday && (
+          <div className="ambient-background" aria-hidden="true">
+            <span className="ambient-blob ambient-blob-left" />
+            <span className="ambient-blob ambient-blob-right" />
+            <span className="ambient-blob ambient-blob-top" />
+          </div>
+        )}
         <div className="container">
 
           {/* ── BIRTHDAY BANNER ── */}
