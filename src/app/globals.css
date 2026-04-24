@@ -262,6 +262,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 
 .nav-title {
@@ -269,6 +277,14 @@ nav {
   font-size: 18px;
   color: var(--ink-soft);
   font-style: italic;
+}
+
+.nav-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav-tabs {
@@ -301,7 +317,7 @@ nav {
 /* ─── Hero section ─── */
 .hero {
   text-align: center;
-  padding: 72px 0 48px;
+  padding: 60px 0 36px;
 }
 
 .hero-label {
@@ -322,22 +338,16 @@ nav {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(36px, 8vw, 72px);
-  line-height: 1.1;
+  font-size: clamp(24px, 4.2vw, 44px);
+  line-height: 1.15;
   color: var(--ink);
-  margin-bottom: 16px;
+  margin-bottom: 0;
+  white-space: nowrap;
 }
 
 .hero-title em {
   color: var(--rose);
   font-style: italic;
-}
-
-.hero-subtitle {
-  font-size: 16px;
-  color: var(--muted);
-  max-width: 440px;
-  margin: 0 auto;
 }
 
 /* ─── Photo of the day card ─── */
@@ -390,10 +400,18 @@ nav {
   z-index: 2;
 }
 
+.photo-day-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
 .photo-day-emoji {
   font-size: 32px;
-  display: block;
-  margin-bottom: 16px;
+  flex: 0 0 auto;
+  line-height: 1;
+  padding-top: 2px;
 }
 
 .photo-day-dedica {
@@ -402,7 +420,7 @@ nav {
   line-height: 1.5;
   color: var(--ink);
   font-style: italic;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .photo-day-date {
@@ -754,6 +772,17 @@ nav {
 
 /* ─── Responsive ─── */
 @media (max-width: 600px) {
+  .nav-inner {
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .nav-copy {
+    flex: 1;
+  }
+  .nav-subtitle {
+    white-space: normal;
+    line-height: 1.35;
+  }
   .ambient-blob-left {
     width: 170px;
     height: 78vh;
@@ -815,13 +844,23 @@ nav {
     top: 460px;
   }
   .hero {
-    padding: 56px 0 36px;
+    padding: 42px 0 28px;
+  }
+  .hero-title {
+    font-size: clamp(22px, 6vw, 30px);
+    white-space: normal;
   }
   .photo-day-content { padding: 24px; }
+  .photo-day-message {
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .photo-day-emoji {
+    font-size: 26px;
+  }
   .countdown-strip { gap: 8px; }
   .countdown-unit { padding: 16px; min-width: 64px; }
   .countdown-num { font-size: 28px; }
-  .nav-title { display: none; }
   .album-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
 }
 

@@ -153,7 +153,10 @@ export default function Home() {
       {/* Nav */}
       <nav>
         <div className="nav-inner">
-          <span className="nav-title">Per {NAME} ✦</span>
+          <div className="nav-copy">
+            <span className="nav-title">Per {NAME} ✦</span>
+            {!isBirthday && <span className="nav-subtitle">Ogni mattina una nuova foto e una dedica speciale fino al 26 maggio.</span>}
+          </div>
           <div className="nav-tabs">
             <button className={`nav-tab ${view === 'oggi' ? 'active' : ''}`} onClick={() => setView('oggi')}>
               Oggi
@@ -201,13 +204,7 @@ export default function Home() {
               {!isBirthday && (
                 <div className="hero">
                   <div className="hero-label">Un regalo ogni giorno</div>
-                  <h1 className="hero-title">
-                    Ciao <em>{NAME}</em>,<br />
-                    questa è la tua foto di oggi
-                  </h1>
-                  <p className="hero-subtitle">
-                    Ogni mattina una nuova foto e una dedica speciale — fino al 26 maggio.
-                  </p>
+                  <h1 className="hero-title">Ciao <em>{NAME}</em>, questa è la tua foto di oggi</h1>
                 </div>
               )}
 
@@ -220,8 +217,10 @@ export default function Home() {
                   <PhotoDisplay filename={todayPhoto.filename} alt="Foto del giorno" />
                 </div>
                 <div className="photo-day-content">
-                  <span className="photo-day-emoji">{todayPhoto.emoji}</span>
-                  <p className="photo-day-dedica">{todayPhoto.dedica}</p>
+                  <div className="photo-day-message">
+                    <span className="photo-day-emoji">{todayPhoto.emoji}</span>
+                    <p className="photo-day-dedica">{todayPhoto.dedica}</p>
+                  </div>
                   <span className="photo-day-date">{formatDate(today)}</span>
                 </div>
               </div>
