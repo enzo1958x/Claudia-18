@@ -101,6 +101,74 @@ main {
   animation: ambientBlobTop 12s ease-in-out infinite alternate;
 }
 
+.side-firework {
+  position: absolute;
+  display: block;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0;
+  filter: blur(0.2px);
+  will-change: transform, opacity;
+}
+
+.side-firework::before,
+.side-firework::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.side-firework::before {
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.95) 0 2px, transparent 3px),
+    linear-gradient(0deg, transparent 48%, rgba(255,255,255,0.9) 49%, rgba(255,255,255,0.9) 51%, transparent 52%),
+    linear-gradient(90deg, transparent 48%, rgba(255,255,255,0.85) 49%, rgba(255,255,255,0.85) 51%, transparent 52%),
+    linear-gradient(45deg, transparent 48%, rgba(232,192,122,0.75) 49%, rgba(232,192,122,0.75) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(240,168,158,0.72) 49%, rgba(240,168,158,0.72) 51%, transparent 52%);
+  transform: scale(0.4);
+}
+
+.side-firework::after {
+  inset: 24px;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.8) 0 1.5px, transparent 2.5px),
+    linear-gradient(22deg, transparent 48%, rgba(255,255,255,0.7) 49%, rgba(255,255,255,0.7) 51%, transparent 52%),
+    linear-gradient(-22deg, transparent 48%, rgba(201,151,58,0.6) 49%, rgba(201,151,58,0.6) 51%, transparent 52%);
+  transform: scale(0.3);
+  opacity: 0.85;
+}
+
+.side-firework-left {
+  left: max(12px, calc(50% - 520px));
+}
+
+.side-firework-right {
+  right: max(12px, calc(50% - 520px));
+}
+
+.side-firework-left-one {
+  top: 180px;
+  animation: sideFirework 7s ease-out infinite;
+}
+
+.side-firework-left-two {
+  top: 460px;
+  animation: sideFirework 8.5s ease-out infinite 2.2s;
+}
+
+.side-firework-right-one {
+  top: 240px;
+  animation: sideFirework 7.8s ease-out infinite 1.2s;
+}
+
+.side-firework-right-two {
+  top: 560px;
+  animation: sideFirework 9s ease-out infinite 3.4s;
+}
+
 /* ─── Layout ─── */
 .container {
   max-width: 860px;
@@ -535,6 +603,29 @@ nav {
   to { transform: translateX(-50%) translateY(12px) scale(1.03); }
 }
 
+@keyframes sideFirework {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  8% {
+    opacity: 0.95;
+    transform: scale(0.6);
+  }
+  22% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  34% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+}
+
 .birthday-banner h1 {
   font-family: var(--font-display);
   font-size: clamp(32px, 8vw, 64px);
@@ -565,6 +656,28 @@ nav {
     width: 280px;
     height: 110px;
     top: -10px;
+  }
+  .side-firework {
+    width: 120px;
+    height: 120px;
+  }
+  .side-firework-left {
+    left: -14px;
+  }
+  .side-firework-right {
+    right: -14px;
+  }
+  .side-firework-left-one {
+    top: 200px;
+  }
+  .side-firework-left-two {
+    top: 470px;
+  }
+  .side-firework-right-one {
+    top: 250px;
+  }
+  .side-firework-right-two {
+    top: 520px;
   }
   .hero {
     padding: 56px 0 36px;

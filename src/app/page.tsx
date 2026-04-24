@@ -171,6 +171,10 @@ export default function Home() {
             <span className="ambient-blob ambient-blob-left" />
             <span className="ambient-blob ambient-blob-right" />
             <span className="ambient-blob ambient-blob-top" />
+            <span className="side-firework side-firework-left side-firework-left-one" />
+            <span className="side-firework side-firework-left side-firework-left-two" />
+            <span className="side-firework side-firework-right side-firework-right-one" />
+            <span className="side-firework side-firework-right side-firework-right-two" />
           </div>
         )}
         <div className="container">
