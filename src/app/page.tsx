@@ -198,11 +198,7 @@ export default function Home() {
           {view === 'oggi' && (
             <>
               {/* Hero */}
-              {!isBirthday && (
-                <div className="hero">
-                  <div className="hero-label">Un regalo ogni giorno</div>
-                </div>
-              )}
+              {!isBirthday && <div className="hero" />}
 
               {/* Photo of the day */}
               <div className="photo-day-card" onClick={() => setLightboxIndex(todayPhotoIndex)}>
