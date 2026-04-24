@@ -37,9 +37,9 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(201,151,58,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 80% 90%, rgba(212,117,106,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(61,107,79,0.04) 0%, transparent 70%);
+    radial-gradient(ellipse 34% 58% at 0% 28%, rgba(201,151,58,0.22) 0%, rgba(201,151,58,0.08) 36%, transparent 72%),
+    radial-gradient(ellipse 36% 60% at 100% 78%, rgba(212,117,106,0.2) 0%, rgba(212,117,106,0.08) 34%, transparent 72%),
+    radial-gradient(ellipse 28% 34% at 82% 14%, rgba(61,107,79,0.12) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -49,42 +49,12 @@ body::after {
   position: fixed;
   inset: -20%;
   background:
-    radial-gradient(circle at 50% 18%, rgba(232, 192, 122, 0.12) 0%, transparent 30%),
-    radial-gradient(circle at 18% 38%, rgba(212, 117, 106, 0.08) 0%, transparent 24%),
-    radial-gradient(circle at 80% 26%, rgba(61, 107, 79, 0.08) 0%, transparent 22%);
-  animation: ambientFloat 18s ease-in-out infinite alternate;
+    radial-gradient(circle at 10% 50%, rgba(232, 192, 122, 0.18) 0%, rgba(232, 192, 122, 0.07) 18%, transparent 34%),
+    radial-gradient(circle at 90% 40%, rgba(240, 168, 158, 0.16) 0%, rgba(240, 168, 158, 0.06) 18%, transparent 32%),
+    radial-gradient(circle at 48% 12%, rgba(255, 255, 255, 0.28) 0%, transparent 20%);
+  animation: ambientFloat 12s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 0;
-}
-
-main::before,
-main::after {
-  content: '';
-  position: fixed;
-  inset: auto;
-  pointer-events: none;
-  z-index: 0;
-  border-radius: 999px;
-  filter: blur(70px);
-  opacity: 0.45;
-}
-
-main::before {
-  width: min(32vw, 320px);
-  height: min(32vw, 320px);
-  top: 16vh;
-  left: -6vw;
-  background: radial-gradient(circle, rgba(201, 151, 58, 0.22) 0%, rgba(201, 151, 58, 0) 72%);
-  animation: backgroundBlobLeft 20s ease-in-out infinite alternate;
-}
-
-main::after {
-  width: min(34vw, 360px);
-  height: min(34vw, 360px);
-  right: -8vw;
-  bottom: 12vh;
-  background: radial-gradient(circle, rgba(212, 117, 106, 0.2) 0%, rgba(212, 117, 106, 0) 72%);
-  animation: backgroundBlobRight 24s ease-in-out infinite alternate;
 }
 
 /* ─── Layout ─── */
@@ -502,18 +472,8 @@ nav {
 }
 
 @keyframes ambientFloat {
-  from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
-  to { transform: translate3d(1.5%, 1.2%, 0) scale(1.04); }
-}
-
-@keyframes backgroundBlobLeft {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to { transform: translate3d(6vw, 5vh, 0) scale(1.12); }
-}
-
-@keyframes backgroundBlobRight {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to { transform: translate3d(-5vw, -4vh, 0) scale(1.08); }
+  from { transform: translate3d(-2%, -1%, 0) scale(1); }
+  to { transform: translate3d(2%, 1.5%, 0) scale(1.06); }
 }
 
 .birthday-banner h1 {
@@ -532,18 +492,6 @@ nav {
 @media (max-width: 600px) {
   .hero {
     padding: 56px 0 36px;
-  }
-  main::before {
-    width: 180px;
-    height: 180px;
-    top: 12vh;
-    left: -60px;
-  }
-  main::after {
-    width: 220px;
-    height: 220px;
-    right: -80px;
-    bottom: 10vh;
   }
   .photo-day-content { padding: 24px; }
   .countdown-strip { gap: 8px; }
