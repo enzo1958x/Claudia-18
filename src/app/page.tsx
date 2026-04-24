@@ -171,10 +171,14 @@ export default function Home() {
             <span className="ambient-blob ambient-blob-left" />
             <span className="ambient-blob ambient-blob-right" />
             <span className="ambient-blob ambient-blob-top" />
-            <span className="side-firework side-firework-left side-firework-left-one" />
-            <span className="side-firework side-firework-left side-firework-left-two" />
-            <span className="side-firework side-firework-right side-firework-right-one" />
-            <span className="side-firework side-firework-right side-firework-right-two" />
+            <span className="rocket-trail rocket-trail-left rocket-trail-left-one" />
+            <span className="rocket-trail rocket-trail-left rocket-trail-left-two" />
+            <span className="rocket-trail rocket-trail-right rocket-trail-right-one" />
+            <span className="rocket-trail rocket-trail-right rocket-trail-right-two" />
+            <span className="burst burst-left burst-left-one" />
+            <span className="burst burst-left burst-left-two" />
+            <span className="burst burst-right burst-right-one" />
+            <span className="burst burst-right burst-right-two" />
           </div>
         )}
         <div className="container">
