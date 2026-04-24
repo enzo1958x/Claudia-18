@@ -184,17 +184,7 @@ export default function Home() {
             <>
               {/* Hero */}
               {!isBirthday && (
-                <div className="hero hero-special">
-                  <div className="hero-orbs" aria-hidden="true">
-                    <span className="hero-orb hero-orb-one" />
-                    <span className="hero-orb hero-orb-two" />
-                    <span className="hero-orb hero-orb-three" />
-                  </div>
-                  <div className="hero-sparkles" aria-hidden="true">
-                    <span className="hero-sparkle hero-sparkle-one">✦</span>
-                    <span className="hero-sparkle hero-sparkle-two">✧</span>
-                    <span className="hero-sparkle hero-sparkle-three">✦</span>
-                  </div>
+                <div className="hero">
                   <div className="hero-label">Un regalo ogni giorno</div>
                   <h1 className="hero-title">
                     Ciao <em>{NAME}</em>,<br />
@@ -207,8 +197,7 @@ export default function Home() {
               )}
 
               {/* Photo of the day */}
-              <div className="photo-day-card photo-day-card-special" onClick={() => setLightboxIndex(todayPhotoIndex)}>
-                <div className="photo-day-glow" aria-hidden="true" />
+              <div className="photo-day-card" onClick={() => setLightboxIndex(todayPhotoIndex)}>
                 <div className="photo-day-image-wrap">
                   <div className="photo-day-badge">
                     Foto {todayPhotoIndex + 1} di {TOTAL_PHOTOS}
@@ -228,14 +217,14 @@ export default function Home() {
                   <div className="section-header">
                     <h2 className="section-title">Al tuo compleanno mancano…</h2>
                   </div>
-                  <div className="countdown-strip countdown-strip-special">
+                  <div className="countdown-strip">
                     {[
                       { num: countdown.giorni, label: countdown.giorni === 1 ? 'giorno' : 'giorni' },
                       { num: countdown.ore, label: countdown.ore === 1 ? 'ora' : 'ore' },
                       { num: countdown.minuti, label: 'minuti' },
                       { num: countdown.secondi, label: 'secondi' },
                     ].map(({ num, label }) => (
-                      <div className="countdown-unit countdown-unit-special" key={label}>
+                      <div className="countdown-unit" key={label}>
                         <span className="countdown-num">{String(num).padStart(2, '0')}</span>
                         <span className="countdown-label">{label}</span>
                       </div>
