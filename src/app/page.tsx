@@ -153,7 +153,11 @@ export default function Home() {
       {/* Nav */}
       <nav>
         <div className="nav-inner">
-          {!isBirthday && <div className="nav-heading">Ciao {NAME}, questa e' la tua foto di oggi.</div>}
+          {!isBirthday && (
+            <div className="nav-heading">
+              Ciao <span className="nav-heading-name">{NAME}</span>, questa e' la tua foto di oggi.
+            </div>
+          )}
           <div className="nav-tabs nav-tabs-bottom">
             <button className={`nav-tab ${view === 'oggi' ? 'active' : ''}`} onClick={() => setView('oggi')}>
               Oggi

@@ -260,17 +260,21 @@ nav {
   margin: 0 auto;
   padding: 14px 24px 16px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .nav-heading {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4.4vw, 42px);
+  font-size: clamp(34px, 5vw, 52px);
   color: var(--ink);
-  text-align: center;
-  line-height: 1.15;
+  line-height: 1.08;
+  flex: 1;
+}
+
+.nav-heading-name {
+  color: var(--rose);
 }
 
 .nav-tabs {
@@ -279,8 +283,9 @@ nav {
 }
 
 .nav-tabs-bottom {
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  align-self: flex-end;
 }
 
 .nav-tab {
@@ -734,11 +739,15 @@ nav {
 /* ─── Responsive ─── */
 @media (max-width: 600px) {
   .nav-inner {
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     gap: 12px;
   }
   .nav-heading {
-    font-size: clamp(24px, 7vw, 32px);
+    font-size: clamp(26px, 7vw, 36px);
+  }
+  .nav-tabs-bottom {
+    align-self: flex-start;
   }
   .ambient-blob-left {
     width: 170px;
