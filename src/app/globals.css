@@ -262,15 +262,17 @@ nav {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 20px;
+  gap: 14px;
 }
 
 .nav-heading {
   font-family: var(--font-display);
-  font-size: clamp(34px, 5vw, 52px);
+  font-size: clamp(22px, 2.5vw, 28px);
   color: var(--ink);
   line-height: 1.08;
   flex: 1;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .nav-heading-name {
@@ -280,6 +282,7 @@ nav {
 .nav-tabs {
   display: flex;
   gap: 4px;
+  flex-shrink: 0;
 }
 
 .nav-tabs-bottom {
@@ -292,9 +295,9 @@ nav {
   background: none;
   border: 1px solid transparent;
   border-radius: 100px;
-  padding: 7px 18px;
+  padding: 6px 14px;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--muted);
   cursor: pointer;
@@ -745,6 +748,7 @@ nav {
   }
   .nav-heading {
     font-size: clamp(26px, 7vw, 36px);
+    white-space: normal;
   }
   .nav-tabs-bottom {
     align-self: flex-start;
