@@ -349,7 +349,7 @@ nav {
   height: 100%;
   object-fit: contain;
   background: var(--warm);
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
 
 .photo-day-card:hover .photo-day-image-wrap img,
@@ -634,7 +634,19 @@ nav {
   border-radius: 20px;
   position: relative;
   overflow: hidden;
-  animation: birthdayPulse 2s ease-in-out infinite;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.birthday-banner-hidden {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  pointer-events: none;
+}
+
+.birthday-banner-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: birthdayPulse 2.4s ease-in-out infinite;
 }
 
 @keyframes birthdayPulse {
@@ -828,6 +840,7 @@ nav {
   .hero {
     padding: 6px 0 18px;
   }
+  
   .photo-day-content { padding: 24px; }
   .photo-day-message {
     gap: 12px;
